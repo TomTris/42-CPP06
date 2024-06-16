@@ -6,7 +6,7 @@
 /*   By: qdo <qdo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 18:49:24 by qdo               #+#    #+#             */
-/*   Updated: 2024/06/16 18:51:12 by qdo              ###   ########.fr       */
+/*   Updated: 2024/06/16 18:58:43 by qdo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -172,7 +172,6 @@ bool	isPseudo(std::string const &str_o)
 {
 	std::string const str[6] = {"-inff", "+inff", "-inff", "+inf", "nan", "nanf"};
 	std::string str2 = (std::string) str_o;
-	bool check = false;
 	std::string::iterator iter;
 	iter = str2.begin();
 
@@ -180,7 +179,6 @@ bool	isPseudo(std::string const &str_o)
 	{
 		if (str[i] == str_o)
 		{
-			check = true;
 			std::cerr << "char: " << "impossible" << std::endl;
 			if (*iter == '-' || *iter == '+')
 			{
@@ -211,4 +209,18 @@ void ScalarConverter::convert(std::string const & literal)
 			return ;
 	}
 	std::cerr << "Can't regconized" << std::endl;
+}
+
+
+
+ScalarConverter::~ScalarConverter() {};
+ScalarConverter::ScalarConverter() {};
+ScalarConverter::ScalarConverter(ScalarConverter const & src)
+{
+	(void) src;
+}
+ScalarConverter & ScalarConverter::operator=(ScalarConverter const & src)
+{
+	(void)src;
+	return *this;
 }

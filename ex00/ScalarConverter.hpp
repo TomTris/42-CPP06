@@ -6,7 +6,7 @@
 /*   By: qdo <qdo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 18:49:25 by qdo               #+#    #+#             */
-/*   Updated: 2024/06/16 15:18:32 by qdo              ###   ########.fr       */
+/*   Updated: 2024/06/16 19:08:34 by qdo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,14 @@
 
 class ScalarConverter
 {
-public:
+private:
+
 	~ScalarConverter();
 	ScalarConverter();
 	ScalarConverter(ScalarConverter const & src);
 	ScalarConverter & operator=(ScalarConverter const & src);
+
+public:
 
 	static void convert(std::string const & literal);
 };
